@@ -44,7 +44,7 @@ export class ProductsService {
     if(price){
       updatedProduct.price = price;
     }
-    updatedProduct.save();
+    await updatedProduct.save();
 
     return await this.getProduct(prodId);
   }

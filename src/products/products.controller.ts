@@ -26,7 +26,8 @@ export class ProductsController {
   @Get(':id')
   async getProduct(@Param('id') prodId: string){
     const prod = await this.productService.getProduct(prodId);
-    return {id: prod.id, title: prod.title, description: prod.description, price: prod.price};
+    return {id: prod.id, title: prod.title, description: prod.description, price: prod.price, 
+      createdAt: prod.createdAt, updatedAt:prod.updatedAt};
   }
 
   @Patch(':id')// patch product will update the given values only. ie) PATCH applies a partial update to the resource.

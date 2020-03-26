@@ -19,7 +19,8 @@ export class ProductsController {
   async getAllProducts(){
     const products = await this.productService.getAllProducts();
     //return products;
-    return products.map((prod)=>({id: prod.id, title: prod.title, description: prod.description, price: prod.price,}));
+    return products.map((prod)=>({id: prod.id, title: prod.title, description: prod.description, price: prod.price, 
+      createdAt: prod.createdAt, updatedAt:prod.updatedAt}));
   }
 
   @Get(':id')

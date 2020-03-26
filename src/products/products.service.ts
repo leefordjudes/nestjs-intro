@@ -23,7 +23,8 @@ export class ProductsService {
   async getAllProducts() {
     const products = await this.productModel.find().exec();
     //return products;//
-    return products.map((prod)=>({id: prod.id, title: prod.title, description: prod.description, price: prod.price}));
+    return products.map((prod)=>({id: prod.id, title: prod.title, description: prod.description, price: prod.price,
+      createdAt: prod.createdAt, updatedAt:prod.updatedAt}));
     //return [...this.products]; //returns all products as newly created array
   }
 
